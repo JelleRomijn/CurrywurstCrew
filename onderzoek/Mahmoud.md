@@ -2,23 +2,41 @@
 
 *Team 3 – Noa, Jasper, Jelle, Mahmoud*
 
-Mogelijke locaties voor onze webpagina. Excursie: maandag 2 t/m donderdag 5 november.
+Mogelijke locaties voor onze webpagina. Excursie: maandag 2 t/m donderdag 5 november (donderdag is de terugreis).
 Hotel: Generator Berlin Mitte, Oranienburger Str. 65, 10117 Berlin.
 
-## Locaties
+## Burgers en vlees
 
-### Markthalle Neun – Street Food Thursday (Kreuzberg) — topkeuze
+### Burgermeister (Kreuzberg) — topkeuze
 
-- **Adres:** Eisenbahnstraße 42, 10997 Berlin
-- **Openingstijden:** Elke donderdag van 17:00 tot 22:00
-- **Kosten:** Gratis toegang; je betaalt per gerecht
-- **Bereikbaarheid:** U-Bahn Görlitzer Bahnhof (U1/U3), ongeveer 400 meter lopen
-- **Waarom:** Donderdag 5 november valt binnen de excursie. Koks zonder eigen restaurant verkopen hier kleine gerechten uit de hele wereld: veel keuze, betaalbaar en gezellig met een groep.
+- **Adres:** Oberbaumstraße 8, Berlin (bij U-Bahn Schlesisches Tor)
+- **Wat:** Klassieke burgers van 100% rundvlees, met friet en zelfgemaakte sauzen
+- **Waarom:** Zit in een oud toiletgebouw onder het spoor. Origineel, betaalbaar en een sterk verhaal met mooie foto's voor de slideshow.
+
+### Shiso Burger (Mitte)
+
+- **Adres:** Alte Schönhauser Straße 13, Berlin (ook een vestiging op Kantstraße 51)
+- **Wat:** Burgers met Aziatische kruiden: rundvlees, zeevruchten en bulgogi (Koreaans gemarineerd vlees)
+- **Waarom:** Op loopafstand van het hotel, dus de route en de kaart zijn makkelijk.
+
+### Tommi's Burger Joint (Mitte)
+
+- **Adres:** Invalidenstraße 160, Berlin (ook een vestiging op Kurfürstendamm 212)
+- **Wat:** Burgers van biologisch Angus-rundvlees; keten die oorspronkelijk uit IJsland komt
+- **Waarom:** Dichtbij het hotel en simpel: goed voor een snelle maaltijd met de groep.
+
+### Rembrandt Burger (Friedrichshain)
+
+- **Adres:** Richard-Sorge-Straße 21, Berlin
+- **Wat:** Burgers met Nederlandse invloed, van regionaal rundvlees met zelfgemaakte sauzen
+- **Waarom:** Grappige link voor Nederlandse studenten.
+
+## Andere opties
 
 ### Mustafa's Gemüse Kebap (Kreuzberg)
 
 - **Adres:** Mehringdamm 33, Berlin (nieuwe locatie, aan de overkant van de oude plek)
-- **Waarom:** De bekendste groentekebab van Berlijn, met lange rijen. Goedkoop en een leuk verhaal voor de pagina.
+- **Waarom:** De bekendste groentekebab van Berlijn, met lange rijen. Goedkoop en een leuk verhaal.
 
 ### Curry 36 (Kreuzberg)
 
@@ -29,14 +47,10 @@ Hotel: Generator Berlin Mitte, Oranienburger Str. 65, 10117 Berlin.
 
 - **Waarom:** Historische currywurst-kraam onder het metrospoor, met veel geschiedenis.
 
-### Burgermeister (Schlesisches Tor)
-
-- **Waarom:** Burgers in een oud toiletgebouw onder het spoor. Origineel en betaalbaar.
-
 ### Monsieur Vuong (Mitte)
 
 - **Locatie:** Alte Schönhauser Straße, op loopafstand van het hotel
-- **Waarom:** Vietnamees eten dichtbij het hotel; makkelijk voor de routebeschrijving en kaart.
+- **Waarom:** Vietnamees eten dichtbij het hotel.
 
 ### Zeit für Brot (Mitte)
 
@@ -45,11 +59,11 @@ Hotel: Generator Berlin Mitte, Oranienburger Str. 65, 10117 Berlin.
 
 ## Tip voor de keuze
 
-Een plek dichtbij het hotel (Monsieur Vuong of Zeit für Brot) maakt de route en de kaart makkelijk. Markthalle Neun of Mustafa's geven een sterker verhaal en mooiere foto's voor de slideshow.
+Burgermeister heeft het sterkste verhaal en de mooiste foto's. Shiso Burger of Tommi's Burger Joint ligt het dichtst bij het hotel, wat de routebeschrijving en de kaart makkelijker maakt.
 
-**Let op:** controleer openingstijden en prijzen op de officiële websites voordat ze op de pagina komen.
+**Let op:** de burgerinformatie komt uit een artikel van oktober 2022. Controleer op Google Maps of de officiële website of het restaurant nog open is, en wat de openingstijden en prijzen zijn, voordat het op de pagina komt.
 
 ## Bronnen
 
-- [berlin.de – Street Food Thursday](https://www.berlin.de/en/shopping/markets/street-food-markets/3862517-7974330-street-food-thursday.en.html)
+- [tip Berlin – Beste Burger in Berlin (2022)](https://www.tip-berlin.de/essen-trinken/restaurants/beste-burger-in-berlin/)
 - [The Berliner – Mustafa's nieuwe locatie](https://www.the-berliner.com/english-news-berlin/mustafas-gemuse-kebab-new-location-mehringdamm-33/)
