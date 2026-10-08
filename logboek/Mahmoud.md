@@ -3,19 +3,14 @@
 ## Les [1] – [10/7/2026]
 
 Wat heb ik vandaag gedaan?
--
+Ontwerp en Onderzoek gedaan 
 
 Met wie heb ik samengewerkt, en waaraan?
--
-
-Wat heb ik bijgedragen aan het team?
--
-
-Wat heb ik van een teamlid geleerd of gekregen?
--
+Jelle en Noa 
+wij hebben de loctaie gekozen en de beste ontwerp 
 
 Hoe ging de samenwerking? Wat ging goed, wat kan beter?
--
+allees ging goe 
 
 Wat ga ik de volgende les doen?
--
+begine met coding 
