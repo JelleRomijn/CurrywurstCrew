@@ -1,0 +1,318 @@
+/* Kaart-sectie: Leaflet-kaart met het hotel, de restaurants en de looproutes.
+   Laptop is de basis, onder 720px schakelt de layout naar telefoon. */
+
+.kaart {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.6;
+    padding: 96px 0;
+}
+
+.kaart__wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+        "titel legenda"
+        "kader kader";
+    align-items: end;
+    gap: 20px 24px;
+}
+
+.kaart__titel {
+    grid-area: titel;
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+}
+
+/* Legenda */
+
+.kaart__legenda {
+    grid-area: legenda;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.kaart__legenda-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.kaart__legenda-knop {
+    padding: 4px 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.kaart__legenda-knop:hover .kaart__legenda-naam {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.kaart__legenda-knop:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 4px;
+    border-radius: 6px;
+}
+
+.kaart--gefocust .kaart__legenda-knop[aria-pressed="false"] {
+    opacity: 0.45;
+}
+
+.kaart__teken {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kaart__teken--hotel {
+    background: var(--ink);
+    color: var(--cream);
+}
+
+.kaart__teken--restaurant {
+    background: var(--accent);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+}
+
+/* Kaartkader */
+
+.kaart__kader {
+    grid-area: kader;
+    position: relative;
+    height: 480px;
+    border: 2px solid var(--ink);
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--map-bg);
+}
+
+.kaart__map {
+    position: absolute;
+    inset: 0;
+}
+
+.kaart__fout {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.kaart__zoom {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.kaart__zoom-knop {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.kaart__zoom-knop:hover {
+    background: var(--yellow);
+}
+
+.kaart__zoom-knop:focus-visible {
+    outline: 3px solid var(--pink);
+    outline-offset: 2px;
+}
+
+/* Pins op de kaart */
+
+.kaart-icoon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kaart-pin {
+    width: 34px;
+    height: 34px;
+    box-sizing: border-box;
+    border: 3px solid;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.kaart-pin--hotel {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--white);
+}
+
+.kaart-pin--restaurant {
+    background: var(--accent);
+    color: var(--ink);
+    border-color: var(--ink);
+}
+
+/* Leaflet in de huisstijl */
+
+.kaart .leaflet-container {
+    background: var(--map-bg);
+    font-family: var(--font-body);
+}
+
+.kaart .leaflet-tile-pane {
+    filter: saturate(0.55) sepia(0.2);
+}
+
+.kaart .leaflet-control-attribution {
+    margin: 0 0 10px 16px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--text-dark);
+    font-size: 13px;
+}
+
+.kaart .leaflet-control-attribution a {
+    color: inherit;
+}
+
+.kaart .leaflet-popup-content-wrapper {
+    border: 2px solid var(--ink);
+    border-radius: 14px;
+    box-shadow: none;
+}
+
+.kaart .leaflet-popup-content {
+    margin: 12px 16px;
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--ink);
+}
+
+.kaart .leaflet-popup-content strong {
+    display: block;
+    font-size: 16px;
+}
+
+.kaart .leaflet-popup-tip {
+    box-shadow: none;
+}
+
+/* Telefoon */
+
+@media (max-width: 720px) {
+    .kaart {
+        font-size: 16px;
+        padding: 48px 0;
+    }
+
+    .kaart__wrap {
+        padding: 0 20px;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "titel"
+            "kader"
+            "legenda";
+        gap: 12px;
+    }
+
+    .kaart__titel {
+        font-size: 26px;
+        line-height: 1.1;
+    }
+
+    .kaart__legenda {
+        gap: 6px 16px;
+        font-size: 14px;
+    }
+
+    .kaart__legenda-item {
+        gap: 6px;
+    }
+
+    .kaart__teken {
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        font-size: 11px;
+    }
+
+    .kaart__kader {
+        height: 320px;
+        border-radius: 18px;
+    }
+
+    .kaart__zoom {
+        top: 10px;
+        right: 10px;
+        gap: 6px;
+    }
+
+    .kaart__zoom-knop {
+        font-size: 20px;
+    }
+
+    .kaart-pin {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .kaart .leaflet-control-attribution {
+        margin: 0 0 8px 10px;
+        padding: 2px 6px;
+        font-size: 11px;
+    }
+}
