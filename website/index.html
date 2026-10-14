@@ -3,11 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CurrywurstCrew</title>
+    <title>Shiso Burger &amp; AMRIT – Berlins Best</title>
+    <meta name="description" content="Twee restaurants vlak bij het hotel voor de CSD-reis naar Berlijn (2–5 november).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h1>CurrywurstCrew</h1>
+<!--
+    Werken met twee restaurants:
+    - Content die per restaurant verschilt zet je in een element met data-restaurant="shiso" of data-restaurant="amrit".
+      De CSS laat alleen het gekozen restaurant zien.
+    - In JavaScript lees je het gekozen restaurant met document.body.dataset.restaurant,
+      en je kunt luisteren naar: document.addEventListener('restaurantchange', function (e) { e.detail.restaurant });
+    - Gebruik var(--accent) voor de kleur van het gekozen restaurant.
+-->
+<body data-restaurant="shiso">
+    <a class="skip-link" href="#main">Naar de inhoud</a>
+
+    <!-- 1. HEADER (Mahmoud) -->
+    <header class="site-header">
+        <div class="wrap site-header__inner">
+            <a href="#top" class="logo display">Berlins Best</a>
+            <nav class="site-nav" aria-label="Hoofdmenu">
+                <a href="#fotos">Foto's</a>
+                <a href="#over">Over</a>
+                <a href="#waarom">Waarom</a>
+                <a href="#praktisch">Praktisch</a>
+                <a href="#route">Route</a>
+                <a href="#kaart">Kaart</a>
+                <a href="#bronnen">Bronnen</a>
+            </nav>
+            <span class="site-header__trip">CSD-reis · 2–5 nov</span>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- TABS + HERO (Mahmoud) -->
+        <section id="top" class="hero bricks">
+            <div class="wrap hero__inner">
+                <div class="tabs" role="tablist" aria-label="Kies een restaurant">
+                    <button type="button" class="tab" role="tab" id="tab-shiso" data-tab="shiso" aria-selected="true">Shiso Burger</button>
+                    <button type="button" class="tab" role="tab" id="tab-amrit" data-tab="amrit" aria-selected="false" tabindex="-1">AMRIT Mitte</button>
+                </div>
+
+                <div class="hero__text" data-restaurant="shiso">
+                    <p class="pill"><span class="pill__badge display">U6</span><span class="pill__label">Halte Friedrichstraße</span></p>
+                    <h1 class="hero__title display">Shiso Burger</h1>
+                    <p class="hero__sub">Burgers met Aziatische smaken · Berlin-Mitte</p>
+                </div>
+                <div class="hero__text" data-restaurant="amrit">
+                    <p class="pill"><span class="pill__badge display">M1</span><span class="pill__label">Oranienburger Straße</span></p>
+                    <h1 class="hero__title display">AMRIT Mitte</h1>
+                    <p class="hero__sub">Indiase keuken &amp; cocktailbar · sinds 1996</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. SLIDESHOW (Noa) – zelf geprogrammeerd in JavaScript -->
+        <section id="fotos" class="section-fotos bricks" aria-label="Foto's">
+            <div class="wrap">
+                <div class="placeholder placeholder--dark">[Slideshow – Noa]</div>
+            </div>
+        </section>
+
+        <!-- 2 + 3. OVER DE PLEK & WAAROM (Jelle) -->
+        <section class="section section--light">
+            <div class="wrap grid">
+                <div id="over" class="col-6 stack">
+                    <h2>Over de plek</h2>
+                    <div data-restaurant="shiso">
+                        <p class="placeholder">[Omschrijving Shiso Burger in eigen woorden – Jelle]</p>
+                    </div>
+                    <div data-restaurant="amrit">
+                        <p class="placeholder">[Omschrijving AMRIT in eigen woorden – Jelle]</p>
+                    </div>
+                </div>
+
+                <div id="waarom" class="col-6 card stack">
+                    <h2 class="h2--small">Waarom voor CSD-studenten?</h2>
+                    <div data-restaurant="shiso">
+                        <p class="placeholder">[Motivatie Shiso Burger – Jelle]</p>
+                    </div>
+                    <div data-restaurant="amrit">
+                        <p class="placeholder">[Motivatie AMRIT – Jelle]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 + 5. PRAKTISCH (Jelle) & ROUTE (Jasper) -->
+        <section class="section bricks">
+            <div class="wrap grid">
+                <div id="praktisch" class="col-5 stack">
+                    <h2>Praktisch</h2>
+                    <!-- Gebruik een <dl class="info-list"> met per rij een <div><dt>Adres</dt><dd>...</dd></div> -->
+                    <dl class="info-list" data-restaurant="shiso">
+                        <div><dt>Adres</dt><dd class="placeholder">[Jelle]</dd></div>
+                        <div><dt>Open</dt><dd class="placeholder">[Jelle]</dd></div>
+                        <div><dt>Kosten</dt><dd class="placeholder">[Jelle]</dd></div>
+                    </dl>
+                    <dl class="info-list" data-restaurant="amrit">
+                        <div><dt>Adres</dt><dd class="placeholder">[Jelle]</dd></div>
+                        <div><dt>Open</dt><dd class="placeholder">[Jelle]</dd></div>
+                        <div><dt>Kosten</dt><dd class="placeholder">[Jelle]</dd></div>
+                    </dl>
+                </div>
+
+                <div id="route" class="col-7 stack">
+                    <div>
+                        <h2>Route vanaf het hotel</h2>
+                        <p class="muted">Generator Berlin Mitte, Oranienburger Str. 65</p>
+                    </div>
+                    <!-- Per route een <article class="route-card"> -->
+                    <div data-restaurant="shiso">
+                        <p class="placeholder placeholder--dark">[Routebeschrijving Shiso Burger – Jasper]</p>
+                    </div>
+                    <div data-restaurant="amrit">
+                        <p class="placeholder placeholder--dark">[Routebeschrijving AMRIT – Jasper]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. KAART (Jasper) – interactieve kaart -->
+        <section id="kaart" class="section section--light">
+            <div class="wrap stack">
+                <h2>Kaart</h2>
+                <div class="map placeholder placeholder--light">[Interactieve kaart – Jasper]</div>
+            </div>
+        </section>
+
+        <!-- 8. BRONNEN (iedereen voegt zijn eigen bronnen toe) -->
+        <section id="bronnen" class="section section--sand">
+            <div class="wrap grid">
+                <div class="col-6 stack">
+                    <h2 class="h2--smaller">Bronnen – tekst</h2>
+                    <ul class="source-list" data-restaurant="shiso">
+                        <li>Shiso Burger, homepage – <a href="https://www.shisoburger.com/">https://www.shisoburger.com/</a></li>
+                    </ul>
+                    <ul class="source-list" data-restaurant="amrit">
+                        <li>AMRIT, Indisches Restaurant Berlin Mitte – <a href="https://amrit.de/indisches-restaurant-berlin-mitte/">https://amrit.de/indisches-restaurant-berlin-mitte/</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 stack">
+                    <h2 class="h2--smaller">Bronnen – beeld</h2>
+                    <ul class="source-list">
+                        <li>[Bron, maker en licentie per foto]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9. FOOTER (Mahmoud) -->
+    <footer class="site-footer">
+        <div class="wrap site-footer__inner">
+            <div class="stack stack--tight">
+                <span class="eyebrow">Gemaakt door · Team 3</span>
+                <span class="logo display">CurrywurstCrew</span>
+                <ul class="chips">
+                    <li>Noa</li>
+                    <li>Jasper</li>
+                    <li>Jelle</li>
+                    <li>Mahmoud</li>
+                </ul>
+            </div>
+            <div class="site-footer__links">
+                <a class="btn btn--outline" href="https://github.com/JelleRomijn/CurrywurstCrew">Code op GitHub</a>
+                <a class="btn btn--solid" href="#top">↑ Terug naar boven</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>
