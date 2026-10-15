@@ -1,1 +1,111 @@
 /* Styles voor CurrywurstCrew */
+
+body {
+    margin: 0;
+    background: #17141A;
+    color: #F5EEE3;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.wrap {
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.h2 {
+    margin: 0;
+    font-family: 'Bungee', Impact, sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 1.1;
+}
+
+/* Over de plek */
+.over {
+    background: #F5EEE3;
+    color: #17141A;
+    padding: 48px 0 20px;
+}
+
+.over .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.over p {
+    margin: 0;
+    color: #4A433C;
+}
+
+/* Waarom voor CSD-studenten? */
+.waarom {
+    background: #F5EEE3;
+    color: #17141A;
+    padding: 20px 0 48px;
+}
+
+.waarom-kaart {
+    background: #FFFFFF;
+    border: 2px solid #17141A;
+    border-radius: 18px;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.waarom-kaart .h2 {
+    font-size: 22px;
+}
+
+.waarom-tekst {
+    margin: 0;
+    color: #4A433C;
+    font-size: 15px;
+}
+
+.checks {
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid #17141A;
+}
+
+.check {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #E2D6C2;
+}
+
+.vinkje {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #17141A;
+    color: #FF4F9A;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vinkje-let-op {
+    background: #A8391F;
+    color: #FFFFFF;
+}
+
+.vraag {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.antwoord {
+    font-size: 14px;
+    color: #4A433C;
+    line-height: 1.5;
+}
