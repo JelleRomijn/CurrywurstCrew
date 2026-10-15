@@ -42,10 +42,10 @@ Wat heb ik bijgedragen aan het team?
 - Jasper toegang gegeven tot de repository.
 
 Wat heb ik van een teamlid geleerd of gekregen?
--
+- Niks 
 
 Hoe ging de samenwerking? Wat ging goed, wat kan beter?
--
+- Samenwerking ging goed we werkten goed en duidelijk
 
 Wat ga ik de volgende les doen?
--
+- ik ga verder met mijn taken voor de les
