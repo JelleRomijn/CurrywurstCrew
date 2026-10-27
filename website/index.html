@@ -9,9 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="css/base.css?v=1">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/kaart.css?v=1">
+    <link rel="stylesheet" href="css/kaart.css">
 </head>
 <!--
     Werken met twee restaurants:
@@ -19,7 +18,7 @@
       De CSS laat alleen het gekozen restaurant zien.
     - In JavaScript lees je het gekozen restaurant met document.body.dataset.restaurant,
       en je kunt luisteren naar: document.addEventListener('restaurantchange', function (e) { e.detail.restaurant });
-    - Gebruik var(--accent) voor de kleur van het gekozen restaurant.
+    - Voor de kleur van het gekozen restaurant gebruik je in CSS de variabele accent (zie style.css).
 -->
 <body data-restaurant="shiso">
     <a class="skip-link" href="#main">Naar de inhoud</a>
@@ -45,9 +44,9 @@
         <!-- TABS + HERO -->
         <section id="top" class="hero bricks">
             <div class="wrap hero__inner">
-                <div class="tabs" role="tablist" aria-label="Kies een restaurant">
-                    <button type="button" class="tab" role="tab" id="tab-shiso" data-tab="shiso" aria-selected="true">Shiso Burger</button>
-                    <button type="button" class="tab" role="tab" id="tab-amrit" data-tab="amrit" aria-selected="false" tabindex="-1">AMRIT Mitte</button>
+                <div class="tabs" role="group" aria-label="Kies een restaurant">
+                    <button type="button" class="tab" id="tab-shiso" data-tab="shiso" aria-pressed="true">Shiso Burger</button>
+                    <button type="button" class="tab" id="tab-amrit" data-tab="amrit" aria-pressed="false">AMRIT Mitte</button>
                 </div>
 
                 <div class="hero__text" data-restaurant="shiso">
@@ -63,10 +62,73 @@
             </div>
         </section>
 
-        <!-- 7. SLIDESHOW – zelf geprogrammeerd in JavaScript -->
-        <section id="fotos" class="section-fotos bricks" aria-label="Foto's">
+        <!-- 7. SLIDESHOW – zelf geprogrammeerd in JavaScript (js/script.js) -->
+        <section id="fotos" class="section-fotos bricks" aria-labelledby="fotos-titel">
             <div class="wrap">
-                <div class="placeholder placeholder--dark">[Slideshow]</div>
+                <h2 id="fotos-titel" class="visually-hidden">Foto's</h2>
+                <div class="slideshow" data-slideshow data-restaurant="shiso">
+                    <div class="slideshow__venster">
+                        <img class="slide__foto is-actief" src="img/shiso-1.jpg" width="1600" height="1068" data-bijschrift="De nieuwe vestiging in Mitte" alt="Interieur van Shiso Burger met lichte houten tafels, een plafond vol tekeningen en roze neonletters">
+                        <img class="slide__foto" src="img/shiso-2.jpg" width="1600" height="1067" data-bijschrift="De open keuken" alt="Een kok maakt achter een glazen toonbank een rij burgers met sla klaar" loading="lazy">
+                        <img class="slide__foto" src="img/shiso-3.jpg" width="1600" height="1067" data-bijschrift="Vers bereide burgers" alt="Een kok in zwarte handschoenen doet saus op een rij burgers met sla, tomaat en rode ui" loading="lazy">
+                        <img class="slide__foto" src="img/shiso-4.jpg" width="1600" height="1066" data-bijschrift="Burger in een bamboemandje" alt="Een burger met kaas, tomaat en sla in wit papier, in een bamboe stoommandje" loading="lazy">
+                        <img class="slide__foto" src="img/shiso-5.jpg" width="1600" height="1067" data-bijschrift="Aan het werk bij de friteuses" alt="Een medewerker in een zwart Shiso-shirt staat bij de friteuses in de open keuken" loading="lazy">
+                        <img class="slide__foto" src="img/shiso-6.jpg" width="1600" height="1067" data-bijschrift="Friet als bijgerecht" alt="Friet in een bamboe stoommandje met het logo van Shiso Burger" loading="lazy">
+
+                        <span class="slideshow__teller display" aria-hidden="true">1 / 6</span>
+                        <button type="button" class="slideshow__knop slideshow__knop--vorige" aria-label="Vorige foto">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+                        </button>
+                        <button type="button" class="slideshow__knop slideshow__knop--volgende" aria-label="Volgende foto">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+                        </button>
+                    </div>
+                    <div class="slideshow__info">
+                        <p class="slideshow__bijschrift" aria-live="polite">De nieuwe vestiging in Mitte</p>
+                        <p class="slideshow__credit">© Shiso Burger</p>
+                    </div>
+                    <div class="slideshow__thumbs">
+                        <button type="button" class="slideshow__thumb" aria-current="true"><img src="img/shiso-1-klein.jpg" width="400" height="267" alt="Foto 1: De nieuwe vestiging in Mitte"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/shiso-2-klein.jpg" width="400" height="267" alt="Foto 2: De open keuken"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/shiso-3-klein.jpg" width="400" height="267" alt="Foto 3: Vers bereide burgers"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/shiso-4-klein.jpg" width="400" height="267" alt="Foto 4: Burger in een bamboemandje"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/shiso-5-klein.jpg" width="400" height="267" alt="Foto 5: Aan het werk bij de friteuses"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/shiso-6-klein.jpg" width="400" height="267" alt="Foto 6: Friet als bijgerecht"></button>
+                    </div>
+                </div>
+
+                <div class="slideshow" data-slideshow data-restaurant="amrit">
+                    <div class="slideshow__venster">
+                        <img class="slide__foto is-actief" src="img/amrit-1.jpg" width="1600" height="900" data-bijschrift="Het restaurant in Mitte" alt="Eetzaal van AMRIT Mitte met gele muren, een grote ronde kroonluchter en gedekte tafels" loading="lazy">
+                        <img class="slide__foto" src="img/amrit-2.jpg" width="1600" height="900" data-bijschrift="Het terras aan de Oranienburger Straße" alt="Het terras van AMRIT aan de Oranienburger Straße, vol gasten onder een luifel met lampjes" loading="lazy">
+                        <img class="slide__foto" src="img/amrit-3.jpg" width="1280" height="852" data-bijschrift="Mango lassi en gerechten" alt="Glazen mango lassi, bloemen en Indiase gerechten op een houten tafel" loading="lazy">
+                        <img class="slide__foto" src="img/amrit-4.jpg" width="1500" height="1000" data-bijschrift="Ruimte voor groepen" alt="Een lange gedekte tafel met salades en curry voor een stenen wandreliëf" loading="lazy">
+                        <img class="slide__foto" src="img/amrit-5.jpg" width="1200" height="675" data-bijschrift="Gerechten van de kaart" alt="Bovenaanzicht van verschillende curry's, rijst en raita in koperen pannetjes op een blauwe tafel" loading="lazy">
+                        <img class="slide__foto" src="img/amrit-6.jpg" width="1500" height="1073" data-bijschrift="AMRIT Mitte in 1999" alt="Oude foto van de witte gevel van AMRIT Mitte in 1999, met geparkeerde auto's ervoor" loading="lazy">
+                        <img class="slide__foto" src="img/amrit-7.jpg" width="1600" height="1067" data-bijschrift="Het team van AMRIT" alt="Zwart-witfoto van het team van AMRIT bij de bar" loading="lazy">
+
+                        <span class="slideshow__teller display" aria-hidden="true">1 / 7</span>
+                        <button type="button" class="slideshow__knop slideshow__knop--vorige" aria-label="Vorige foto">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+                        </button>
+                        <button type="button" class="slideshow__knop slideshow__knop--volgende" aria-label="Volgende foto">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+                        </button>
+                    </div>
+                    <div class="slideshow__info">
+                        <p class="slideshow__bijschrift" aria-live="polite">Het restaurant in Mitte</p>
+                        <p class="slideshow__credit">© AMRIT Berlin</p>
+                    </div>
+                    <div class="slideshow__thumbs">
+                        <button type="button" class="slideshow__thumb" aria-current="true"><img src="img/amrit-1-klein.jpg" width="400" height="225" alt="Foto 1: Het restaurant in Mitte" loading="lazy"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/amrit-2-klein.jpg" width="400" height="225" alt="Foto 2: Het terras aan de Oranienburger Straße" loading="lazy"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/amrit-3-klein.jpg" width="400" height="266" alt="Foto 3: Mango lassi en gerechten" loading="lazy"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/amrit-4-klein.jpg" width="400" height="267" alt="Foto 4: Ruimte voor groepen" loading="lazy"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/amrit-5-klein.jpg" width="400" height="225" alt="Foto 5: Gerechten van de kaart" loading="lazy"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/amrit-6-klein.jpg" width="400" height="286" alt="Foto 6: AMRIT Mitte in 1999" loading="lazy"></button>
+                        <button type="button" class="slideshow__thumb"><img src="img/amrit-7-klein.jpg" width="400" height="267" alt="Foto 7: Het team van AMRIT" loading="lazy"></button>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -79,8 +141,9 @@
                         <p>Shiso Burger mengt de klassieke burger met de Koreaanse en Japanse keuken. Het concept is in Berlijn-Mitte begonnen en heeft nu ongeveer vijftien vestigingen in Europa en daarbuiten. De nieuwste Berlijnse zaak zit aan de Georgenstraße, onder het spoorviaduct bij station Friedrichstraße.</p>
                         <p>Alles wordt vers bereid in een open keuken, dus je ziet je eten gemaakt worden. De burgers komen op zelfgebakken broodjes met Angus-rund en sauzen uit eigen keuken. Bekende keuzes zijn de Bulgogi Burger en de burger met een tonijnpatty. Er zijn ook vegetarische en vegan burgers, en bijgerechten als zoete-aardappelfriet, kimchi en edamame.</p>
                     </div>
-                    <div data-restaurant="amrit">
-                        <p class="placeholder">[Omschrijving AMRIT in eigen woorden]</p>
+                    <div class="stack" data-restaurant="amrit">
+                        <p>AMRIT is een Indiaas restaurant dat in 1996 door de broers Bans is opgericht. In 1999 openden ze de vestiging in Mitte, aan de Oranienburger Straße tegenover het bekende Tacheles-gebouw. Inmiddels zijn er vier AMRIT-restaurants in Berlijn.</p>
+                        <p>Op de kaart staan currys, tandoori-gerechten uit de kleioven, biryani en vers naanbrood, met veel vegetarische en vegan keuzes. Het terras heeft een overkapping die in de winter wordt verwarmd. AMRIT staat ook bekend om de grote cocktails en is gewend aan groepen.</p>
                     </div>
                 </div>
 
@@ -88,46 +151,83 @@
                     <h2 class="h2--small">Waarom voor CSD-studenten?</h2>
                     <div class="stack" data-restaurant="shiso">
                         <p class="waarom-tekst">Shiso Burger is een snelle, betaalbare stop midden in het centrum. Het ligt naast station Friedrichstraße, dus het past goed in een dag met sightseeing rond Unter den Linden en het Museumsinsel. De combinatie van Aziatische en Amerikaanse smaken is net wat anders dan een gewone burgerketen.</p>
-                        <div class="checks">
-                            <div class="check">
-                                <span class="vinkje">✓</span>
+                        <ul class="checks">
+                            <li class="check">
+                                <span class="vinkje" aria-hidden="true">✓</span>
                                 <div>
-                                    <div class="vraag">Interessant voor CSD-studenten?</div>
-                                    <div class="antwoord">Ja. Origineel concept, centraal gelegen en geschikt voor vlees-eters, vegetariërs en veganisten.</div>
+                                    <p class="vraag">Interessant voor CSD-studenten?</p>
+                                    <p class="antwoord">Ja. Origineel concept, centraal gelegen en geschikt voor vlees-eters, vegetariërs en veganisten.</p>
                                 </div>
-                            </div>
-                            <div class="check">
-                                <span class="vinkje">✓</span>
+                            </li>
+                            <li class="check">
+                                <span class="vinkje" aria-hidden="true">✓</span>
                                 <div>
-                                    <div class="vraag">Open tussen 2 en 5 november?</div>
-                                    <div class="antwoord">Ja. Dagelijks open van 12:00 tot 23:00, dus ook op maandag 2 t/m donderdag 5 november.</div>
+                                    <p class="vraag">Open tussen 2 en 5 november?</p>
+                                    <p class="antwoord">Ja. Dagelijks open van 12:00 tot 23:00, dus ook op maandag 2 t/m donderdag 5 november.</p>
                                 </div>
-                            </div>
-                            <div class="check">
-                                <span class="vinkje">✓</span>
+                            </li>
+                            <li class="check">
+                                <span class="vinkje" aria-hidden="true">✓</span>
                                 <div>
-                                    <div class="vraag">Goed bereikbaar vanaf het hotel?</div>
-                                    <div class="antwoord">Ja. Ongeveer 13 minuten lopen, of 2 haltes met de U6.</div>
+                                    <p class="vraag">Goed bereikbaar vanaf het hotel?</p>
+                                    <p class="antwoord">Ja. Ongeveer 13 minuten lopen, of 1 halte met de U6.</p>
                                 </div>
-                            </div>
-                            <div class="check">
-                                <span class="vinkje vinkje-let-op">±</span>
+                            </li>
+                            <li class="check">
+                                <span class="vinkje vinkje-let-op" aria-hidden="true">±</span>
                                 <div>
-                                    <div class="vraag">Betaalbaar voor studenten?</div>
-                                    <div class="antwoord">Redelijk. Een burger kost ongeveer €10,50–12,50, met friet en drinken reken je zo’n €18–22. Geen studentenkorting bekend.</div>
+                                    <p class="vraag">Betaalbaar voor studenten?</p>
+                                    <p class="antwoord">Redelijk. Een burger kost ongeveer €10,50–12,50, met friet en drinken reken je zo’n €18–22. Geen studentenkorting bekend.</p>
                                 </div>
-                            </div>
-                            <div class="check">
-                                <span class="vinkje">✓</span>
+                            </li>
+                            <li class="check">
+                                <span class="vinkje" aria-hidden="true">✓</span>
                                 <div>
-                                    <div class="vraag">Genoeg informatie en beeld?</div>
-                                    <div class="antwoord">Ja. De eigen website heeft foto’s, menu en locaties, en er zijn veel recensies online.</div>
+                                    <p class="vraag">Genoeg informatie en beeld?</p>
+                                    <p class="antwoord">Ja. De eigen website heeft foto’s, menu en locaties, en er zijn veel recensies online.</p>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
-                    <div data-restaurant="amrit">
-                        <p class="placeholder">[Motivatie AMRIT]</p>
+                    <div class="stack" data-restaurant="amrit">
+                        <p class="waarom-tekst">AMRIT ligt in dezelfde straat als het hotel, dus je loopt er in een paar minuten naartoe. Dat maakt het makkelijk voor een gezamenlijk diner na een lange dag. Doordeweeks is er een lunchkaart met gerechten vanaf €8,90, en het restaurant neemt groepsreserveringen aan, wat handig is voor een hele klas.</p>
+                        <ul class="checks">
+                            <li class="check">
+                                <span class="vinkje" aria-hidden="true">✓</span>
+                                <div>
+                                    <p class="vraag">Interessant voor CSD-studenten?</p>
+                                    <p class="antwoord">Ja. Ruim aanbod, ook vegetarisch en vegan, gezellige sfeer en geschikt voor grote groepen.</p>
+                                </div>
+                            </li>
+                            <li class="check">
+                                <span class="vinkje" aria-hidden="true">✓</span>
+                                <div>
+                                    <p class="vraag">Open tussen 2 en 5 november?</p>
+                                    <p class="antwoord">Ja. Zondag t/m donderdag open van 11:30 tot 00:00, dus op alle vier de dagen.</p>
+                                </div>
+                            </li>
+                            <li class="check">
+                                <span class="vinkje" aria-hidden="true">✓</span>
+                                <div>
+                                    <p class="vraag">Goed bereikbaar vanaf het hotel?</p>
+                                    <p class="antwoord">Zeer goed. Zelfde straat, ongeveer 170 meter lopen.</p>
+                                </div>
+                            </li>
+                            <li class="check">
+                                <span class="vinkje" aria-hidden="true">✓</span>
+                                <div>
+                                    <p class="vraag">Betaalbaar voor studenten?</p>
+                                    <p class="antwoord">Ja. Lunch ma–vr €8,90–11,50, hoofdgerechten ’s avonds vanaf €11,50. Geen studentenkorting bekend.</p>
+                                </div>
+                            </li>
+                            <li class="check">
+                                <span class="vinkje" aria-hidden="true">✓</span>
+                                <div>
+                                    <p class="vraag">Genoeg informatie en beeld?</p>
+                                    <p class="antwoord">Ja. De website heeft een volledige menukaart met prijzen, openingstijden en veel foto’s.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -138,16 +238,17 @@
             <div class="wrap grid">
                 <div id="praktisch" class="col-5 stack">
                     <h2>Praktisch</h2>
-                    <!-- Gebruik een <dl class="info-list"> met per rij een <div><dt>Adres</dt><dd>...</dd></div> -->
                     <dl class="info-list" data-restaurant="shiso">
-                        <div><dt>Adres</dt><dd class="placeholder">[Nog invullen]</dd></div>
-                        <div><dt>Open</dt><dd class="placeholder">[Nog invullen]</dd></div>
-                        <div><dt>Kosten</dt><dd class="placeholder">[Nog invullen]</dd></div>
+                        <div><dt>Adres</dt><dd>Georgenstraße, Stadtbahnbogen 201<br>10117 Berlin</dd></div>
+                        <div><dt>Open</dt><dd>Ma–zo 12:00&nbsp;–&nbsp;23:00<br>Open op 2, 3, 4 en 5 november</dd></div>
+                        <div><dt>Kosten</dt><dd>Burger ca. €10,50&nbsp;–&nbsp;12,50<br>Maaltijd met friet en drankje ca. €18&nbsp;–&nbsp;22</dd></div>
+                        <div><dt>Korting</dt><dd>Geen studentenkorting bekend</dd></div>
                     </dl>
                     <dl class="info-list" data-restaurant="amrit">
-                        <div><dt>Adres</dt><dd class="placeholder">[Nog invullen]</dd></div>
-                        <div><dt>Open</dt><dd class="placeholder">[Nog invullen]</dd></div>
-                        <div><dt>Kosten</dt><dd class="placeholder">[Nog invullen]</dd></div>
+                        <div><dt>Adres</dt><dd>Oranienburger Straße 45<br>10117 Berlin</dd></div>
+                        <div><dt>Open</dt><dd>Zo–do 11:30&nbsp;–&nbsp;00:00<br>Vr–za 11:30&nbsp;–&nbsp;01:00<br>Open op 2, 3, 4 en 5 november</dd></div>
+                        <div><dt>Kosten</dt><dd>Lunch (ma–vr 11:30–14:00) €8,90&nbsp;–&nbsp;11,50<br>Hoofdgerecht €11,50&nbsp;–&nbsp;19,50<br>Naan €2,80 · Mango lassi €3,20</dd></div>
+                        <div><dt>Korting</dt><dd>Geen studentenkorting bekend<br>Groepsreservering mogelijk</dd></div>
                     </dl>
                 </div>
 
@@ -156,18 +257,51 @@
                         <h2>Route vanaf het hotel</h2>
                         <p class="muted">Generator Berlin Mitte, Oranienburger Str. 65</p>
                     </div>
-                    <!-- Per route een <article class="route-card"> -->
-                    <div data-restaurant="shiso">
-                        <p class="placeholder placeholder--dark">[Routebeschrijving Shiso Burger]</p>
+                    <div class="stack" data-restaurant="shiso">
+                        <article class="route-card">
+                            <h3 class="route-card__kop">
+                                <span class="route-card__modus">Lopen</span>
+                                <span class="route-card__tijd display">± 13 min</span>
+                                <span class="route-card__afstand">± 1,1 km</span>
+                            </h3>
+                            <ol class="route-card__stappen">
+                                <li>Loop vanaf het hotel naar links over de Oranienburger Straße, richting de Friedrichstraße.</li>
+                                <li>Sla linksaf de Friedrichstraße in en loop rechtdoor over de Weidendammer Brücke (de Spree).</li>
+                                <li>Direct na de brug, voor het spoorviaduct, linksaf de Georgenstraße in. Shiso Burger ligt aan je linkerhand.</li>
+                            </ol>
+                        </article>
+                        <article class="route-card">
+                            <h3 class="route-card__kop">
+                                <span class="route-card__modus route-card__modus--ov">U6</span>
+                                <span class="route-card__tijd display">± 10 min</span>
+                                <span class="route-card__afstand">1 halte</span>
+                            </h3>
+                            <ol class="route-card__stappen">
+                                <li>Loop ca. 4 minuten naar U-Bahnstation Oranienburger Tor, op de hoek met de Friedrichstraße.</li>
+                                <li>Neem de U6 richting Alt-Mariendorf en stap na 1 halte uit bij Friedrichstraße.</li>
+                                <li>Loop 2 minuten naar de Georgenstraße. Je hebt een kaartje voor zone AB nodig.</li>
+                            </ol>
+                        </article>
                     </div>
-                    <div data-restaurant="amrit">
-                        <p class="placeholder placeholder--dark">[Routebeschrijving AMRIT]</p>
+                    <div class="stack" data-restaurant="amrit">
+                        <article class="route-card">
+                            <h3 class="route-card__kop">
+                                <span class="route-card__modus">Lopen</span>
+                                <span class="route-card__tijd display">± 3 min</span>
+                                <span class="route-card__afstand">± 170 m</span>
+                            </h3>
+                            <ol class="route-card__stappen">
+                                <li>Loop vanaf het hotel naar links over de Oranienburger Straße, richting de Friedrichstraße.</li>
+                                <li>Steek na ongeveer 100 meter over naar de overkant van de straat.</li>
+                                <li>AMRIT ligt op nummer 45, tegenover het Tacheles-gebouw. Je herkent het aan het overdekte terras.</li>
+                            </ol>
+                        </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. KAART – interactieve kaart -->
+        <!-- 6. KAART – interactieve kaart (js/kaart.js) -->
         <section id="kaart" class="kaart" aria-labelledby="kaart-titel" data-kaart>
             <div class="kaart__wrap">
                 <h2 id="kaart-titel" class="kaart__titel">Kaart</h2>
@@ -189,23 +323,39 @@
             </div>
         </section>
 
-        <!-- 8. BRONNEN (iedereen voegt zijn eigen bronnen toe) -->
+        <!-- 8. BRONNEN -->
         <section id="bronnen" class="section section--sand">
             <div class="wrap grid">
                 <div class="col-6 stack">
                     <h2 class="h2--smaller">Bronnen – tekst</h2>
                     <ul class="source-list" data-restaurant="shiso">
                         <li>Shiso Burger, homepage – <a href="https://www.shisoburger.com/">https://www.shisoburger.com/</a></li>
+                        <li>Shiso Burger, menu – <a href="https://www.shisoburger.com/menu">https://www.shisoburger.com/menu</a></li>
+                        <li>Shiso Burger, locaties – <a href="https://www.shisoburger.com/locations">https://www.shisoburger.com/locations</a></li>
+                        <li>Coolibri, openingstijden Georgenstraße – <a href="https://coolibri.de/restaurant/shiso-burger-georgenstrasse-berlin/bewertungen/">https://coolibri.de/restaurant/shiso-burger-georgenstrasse-berlin/bewertungen/</a></li>
+                        <li>Wolt, prijzen Shiso Burger – <a href="https://wolt.com/en/deu/berlin/restaurant/shiso-burger-kreuzberg">https://wolt.com/en/deu/berlin/restaurant/shiso-burger-kreuzberg</a></li>
                     </ul>
                     <ul class="source-list" data-restaurant="amrit">
                         <li>AMRIT, Indisches Restaurant Berlin Mitte – <a href="https://amrit.de/indisches-restaurant-berlin-mitte/">https://amrit.de/indisches-restaurant-berlin-mitte/</a></li>
+                        <li>AMRIT, Speisekarte Mitte – <a href="https://amrit.de/speisekarte-amrit-mitte/">https://amrit.de/speisekarte-amrit-mitte/</a></li>
+                    </ul>
+                    <ul class="source-list">
+                        <li>Route: OpenStreetMap Nominatim (adressen) en FOSSGIS-routeplanner (looproutes) – <a href="https://routing.openstreetmap.de/">https://routing.openstreetmap.de/</a></li>
+                        <li>BVG, openbaar vervoer in Berlijn – <a href="https://www.bvg.de/">https://www.bvg.de/</a></li>
                     </ul>
                 </div>
                 <div class="col-6 stack">
                     <h2 class="h2--smaller">Bronnen – beeld</h2>
-                    <ul class="source-list">
-                        <li>[Bron, maker en licentie per foto]</li>
+                    <ul class="source-list" data-restaurant="shiso">
+                        <li>Foto’s 1–6: © Shiso Burger – <a href="https://www.shisoburger.com/">https://www.shisoburger.com/</a></li>
                     </ul>
+                    <ul class="source-list" data-restaurant="amrit">
+                        <li>Foto’s 1–7: © AMRIT Berlin – <a href="https://amrit.de/indisches-restaurant-berlin-mitte/">https://amrit.de/indisches-restaurant-berlin-mitte/</a></li>
+                    </ul>
+                    <ul class="source-list">
+                        <li>Kaart: © Esri, HERE, Garmin, © OpenStreetMap-bijdragers, gemaakt met Leaflet – <a href="https://leafletjs.com/">https://leafletjs.com/</a></li>
+                    </ul>
+                    <p class="source-note">De foto’s zijn van de restaurants zelf en worden alleen gebruikt voor dit schoolproject. Wij hebben ze verkleind en bijgesneden voor het web. Geraadpleegd in oktober 2026.</p>
                 </div>
             </div>
         </section>
@@ -226,14 +376,14 @@
             </div>
             <div class="site-footer__links">
                 <a class="btn btn--outline" href="https://github.com/JelleRomijn/CurrywurstCrew">Code op GitHub</a>
-                <a class="btn btn--solid" href="#top">↑ Terug naar boven</a>
+                <a class="btn btn--solid" href="../index.html">← Terug naar overzicht</a>
             </div>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" integrity="sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/kaart-data.js?v=1"></script>
-    <script src="js/kaart.js?v=4"></script>
+    <script src="js/kaart-data.js"></script>
+    <script src="js/kaart.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
