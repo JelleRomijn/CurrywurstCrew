@@ -328,6 +328,55 @@ dd.placeholder,
     background: var(--white);
 }
 
+/* Vragen met een vinkje (Jelle) */
+.waarom-tekst {
+    color: var(--muted-dark);
+    font-size: 15px;
+}
+
+.checks {
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid var(--ink);
+}
+
+.check {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--sand-line);
+}
+
+.vinkje {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vinkje-let-op {
+    background: var(--rust);
+    color: var(--white);
+}
+
+.vraag {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.antwoord {
+    font-size: 14px;
+    color: var(--muted-dark);
+    line-height: 1.5;
+}
+
 /* ---------- Praktisch ---------- */
 .info-list {
     display: flex;
