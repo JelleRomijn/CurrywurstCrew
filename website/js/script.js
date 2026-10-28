@@ -1,5 +1,37 @@
 // Scripts voor CurrywurstCrew
 
+// ---------- Hamburgermenu op mobiel ----------
+// De knop zet de class 'is-open' op de header. De CSS laat dan het menu zien.
+
+var header = document.querySelector('.site-header');
+var menuKnop = header.querySelector('.menu-knop');
+
+function zetMenu(open) {
+    header.classList.toggle('is-open', open);
+    menuKnop.setAttribute('aria-expanded', open);
+    menuKnop.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+}
+
+menuKnop.addEventListener('click', function () {
+    zetMenu(!header.classList.contains('is-open'));
+});
+
+// Menu dicht na het kiezen van een link
+header.querySelectorAll('.site-nav a').forEach(function (link) {
+    link.addEventListener('click', function () {
+        zetMenu(false);
+    });
+});
+
+// Menu dicht met Escape, en de focus terug op de knop
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && header.classList.contains('is-open')) {
+        zetMenu(false);
+        menuKnop.focus();
+    }
+});
+
+
 // ---------- Tabs: wisselen tussen Shiso Burger en AMRIT (Mahmoud) ----------
 // Zet data-restaurant op <body>. De CSS verbergt dan het andere restaurant
 // en verandert de accentkleur (--accent).
@@ -119,3 +151,4 @@ if (window.Kaart) {
         window.Kaart.toon(e.detail.restaurant);
     });
 }
+ 
