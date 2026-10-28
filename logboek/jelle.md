@@ -49,3 +49,27 @@ Hoe ging de samenwerking? Wat ging goed, wat kan beter?
 
 Wat ga ik de volgende les doen?
 - ik ga verder met mijn taken voor de les
+
+## Les 3 – 28-10-2026
+
+Wat heb ik vandaag gedaan?
+- Onze website gepresenteerd. Dit was de laatste les.
+- Overal "hotel" vervangen door "Hostel", want Generator Berlin Mitte is een hostel. Dit heb ik aangepast in de README, mijn logboek, het onderzoek, mijn ontwerp en de website, ook in de code van de kaart (`kaart.js`, `kaart-data.js` en `kaart.css`).
+- Het hamburgermenu voor de mobiele versie, dat Mahmoud op `main` had gezet, samengevoegd met mijn branch `jelle`.
+
+Met wie heb ik samengewerkt, en waaraan?
+- Met het team: de presentatie van de website.
+- Met Mahmoud: hij heeft de onderdelen van iedereen samengevoegd tot één website, en ik heb zijn laatste versie in mijn branch gezet.
+
+Wat heb ik bijgedragen aan het team?
+- De presentatie van onze website.
+- De teksten op de site en in de documenten kloppen nu: we slapen in een hostel, niet in een hotel.
+
+Wat heb ik van een teamlid geleerd of gekregen?
+- Van Mahmoud het hamburgermenu voor de mobiele versie.
+
+Hoe ging de samenwerking? Wat ging goed, wat kan beter?
+- Goed. Iedereen werkte op een eigen branch.
+
+Wat ga ik de volgende les doen?
+- Dit was de laatste les. Van 2 t/m 5 november gaan we op excursie naar Berlijn.
