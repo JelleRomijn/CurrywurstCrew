@@ -206,7 +206,20 @@ body[data-restaurant="amrit"] [data-restaurant="shiso"] {
     font-size: 18px;
 }
 
-.site-nav { display: none; } /* op mobiel geen menu, zoals in het ontwerp */
+/* Op mobiel klapt het menu open onder de header met de hamburgerknop */
+.site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 8px var(--gutter) 16px;
+    background: var(--ink);
+    border-bottom: 1px solid var(--line-dark);
+}
+
+.site-header.is-open .site-nav { display: flex; }
 
 .site-nav a {
     padding: 12px 4px;
@@ -219,9 +232,38 @@ body[data-restaurant="amrit"] [data-restaurant="shiso"] {
 .site-nav a:hover { color: var(--yellow); }
 
 .site-header__trip {
+    margin-left: auto;
     font-size: 13px;
     color: var(--muted);
 }
+
+.menu-knop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    margin-left: -12px;
+    margin-right: -10px;
+    padding: 0 10px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.menu-knop__streep {
+    display: block;
+    height: 2px;
+    background: var(--cream);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Van hamburger naar kruisje als het menu open is */
+.site-header.is-open .menu-knop__streep:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.site-header.is-open .menu-knop__streep:nth-child(2) { opacity: 0; }
+.site-header.is-open .menu-knop__streep:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ---------- Hero + tabs ---------- */
 .hero { padding: 20px 0 24px; }
@@ -666,7 +708,17 @@ body[data-restaurant="amrit"] [data-restaurant="shiso"] {
 
     .site-header__inner { height: 76px; }
     .logo { font-size: 22px; }
-    .site-nav { display: flex; flex-wrap: wrap; gap: 22px; }
+    .site-nav {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 22px;
+        padding: 0;
+        border: 0;
+    }
+    .site-header__trip { margin-left: 0; }
+    .menu-knop { display: none; }
     .site-header__trip { font-size: 14px; }
 
     .hero { padding: 48px 0 40px; }
