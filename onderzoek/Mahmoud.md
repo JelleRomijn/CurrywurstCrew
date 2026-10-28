@@ -3,7 +3,7 @@
 *Team 3 – Noa, Jasper, Jelle, Mahmoud*
 
 Mogelijke locaties voor onze webpagina. Excursie: maandag 2 t/m donderdag 5 november (donderdag is de terugreis).
-Hotel: Generator Berlin Mitte, Oranienburger Str. 65, 10117 Berlin.
+Hostel: Generator Berlin Mitte, Oranienburger Str. 65, 10117 Berlin.
 
 ## Burgers en vlees
 
@@ -17,13 +17,13 @@ Hotel: Generator Berlin Mitte, Oranienburger Str. 65, 10117 Berlin.
 
 - **Adres:** Alte Schönhauser Straße 13, Berlin (ook een vestiging op Kantstraße 51)
 - **Wat:** Burgers met Aziatische kruiden: rundvlees, zeevruchten en bulgogi (Koreaans gemarineerd vlees)
-- **Waarom:** Op loopafstand van het hotel, dus de route en de kaart zijn makkelijk.
+- **Waarom:** Op loopafstand van het Hostel, dus de route en de kaart zijn makkelijk.
 
 ### Tommi's Burger Joint (Mitte)
 
 - **Adres:** Invalidenstraße 160, Berlin (ook een vestiging op Kurfürstendamm 212)
 - **Wat:** Burgers van biologisch Angus-rundvlees; keten die oorspronkelijk uit IJsland komt
-- **Waarom:** Dichtbij het hotel en simpel: goed voor een snelle maaltijd met de groep.
+- **Waarom:** Dichtbij het Hostel en simpel: goed voor een snelle maaltijd met de groep.
 
 ### Rembrandt Burger (Friedrichshain)
 
@@ -49,17 +49,17 @@ Hotel: Generator Berlin Mitte, Oranienburger Str. 65, 10117 Berlin.
 
 ### Monsieur Vuong (Mitte)
 
-- **Locatie:** Alte Schönhauser Straße, op loopafstand van het hotel
-- **Waarom:** Vietnamees eten dichtbij het hotel.
+- **Locatie:** Alte Schönhauser Straße, op loopafstand van het Hostel
+- **Waarom:** Vietnamees eten dichtbij het Hostel.
 
 ### Zeit für Brot (Mitte)
 
-- **Locatie:** Alte Schönhauser Straße, dichtbij het hotel
+- **Locatie:** Alte Schönhauser Straße, dichtbij het Hostel
 - **Waarom:** Bakkerij die bekendstaat om kaneelbroodjes; goed voor ontbijt.
 
 ## Tip voor de keuze
 
-Burgermeister heeft het sterkste verhaal en de mooiste foto's. Shiso Burger of Tommi's Burger Joint ligt het dichtst bij het hotel, wat de routebeschrijving en de kaart makkelijker maakt.
+Burgermeister heeft het sterkste verhaal en de mooiste foto's. Shiso Burger of Tommi's Burger Joint ligt het dichtst bij het Hostel, wat de routebeschrijving en de kaart makkelijker maakt.
 
 **Let op:** de burgerinformatie komt uit een artikel van oktober 2022. Controleer op Google Maps of de officiële website of het restaurant nog open is, en wat de openingstijden en prijzen zijn, voordat het op de pagina komt.
 

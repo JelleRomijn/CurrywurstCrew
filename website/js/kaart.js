@@ -1,4 +1,4 @@
-/* Kaart-sectie: tekent het hotel, de restaurants en de looproutes met Leaflet.
+/* Kaart-sectie: tekent het Hostel, de restaurants en de looproutes met Leaflet.
    Andere onderdelen van de site kunnen één restaurant uitlichten met Kaart.toon('shiso')
    of Kaart.toon('amrit'), en alles weer tonen met Kaart.toon(null). */
 
@@ -9,7 +9,7 @@
 
     var kader = sectie.querySelector('.kaart__kader');
     var legenda = sectie.querySelector('.kaart__legenda');
-    var hotel = data.hotel;
+    var Hostel = data.Hostel;
     var restaurants = data.restaurants;
 
     if (!window.L) {
@@ -36,12 +36,12 @@
         .addAttribution('© <a href="https://www.esri.com/">Esri</a>, HERE, Garmin, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap-bijdragers</a>')
         .addTo(map);
 
-    L.marker(hotel.positie, {
-        icon: maakPin('H', 'hotel'),
-        title: hotel.naam,
+    L.marker(Hostel.positie, {
+        icon: maakPin('H', 'Hostel'),
+        title: Hostel.naam,
         zIndexOffset: 1000
     })
-        .bindPopup(popupTekst(hotel))
+        .bindPopup(popupTekst(Hostel))
         .addTo(map);
 
     var lagen = {};
@@ -68,7 +68,7 @@
         actief = restaurants[key] ? key : null;
         sectie.classList.toggle('kaart--gefocust', actief !== null);
 
-        var punten = [hotel.positie];
+        var punten = [Hostel.positie];
         Object.keys(lagen).forEach(function (k) {
             var zichtbaar = !actief || k === actief;
             lagen[k].lijnen.forEach(function (lijn) {
@@ -144,7 +144,7 @@
     function toonFout() {
         var melding = document.createElement('p');
         melding.className = 'kaart__fout';
-        melding.textContent = 'De kaart kon niet laden. Het hotel ligt aan de ' + hotel.adres + '; ' +
+        melding.textContent = 'De kaart kon niet laden. Het Hostel ligt aan de ' + Hostel.adres + '; ' +
             Object.keys(restaurants).map(function (k) {
                 return restaurants[k].naam + ' aan de ' + restaurants[k].adres;
             }).join(' en ') + '.';

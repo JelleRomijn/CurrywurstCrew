@@ -4,9 +4,9 @@
 Naam: Jelle
 Categorie: eten en drinken
 Periode: maandag 2 t/m donderdag 5 november 2026
-Hotel: Generator Berlin Mitte, Oranienburger Str. 65, 10117 Berlin
+Hostel: Generator Berlin Mitte, Oranienburger Str. 65, 10117 Berlin
 
-Afstanden zijn hemelsbreed gemeten vanaf het hotel. Reistijd is een schatting met OV of lopend.
+Afstanden zijn hemelsbreed gemeten vanaf het Hostel. Reistijd is een schatting met OV of lopend.
 
 ---
 

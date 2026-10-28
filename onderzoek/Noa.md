@@ -8,9 +8,9 @@ Het zit in het historische deel van Mitte, tegenover het Tacheles, en is ook een
 2. Open tussen 2 en 5 november? Ja.
 2 t/m 5 november is maandag t/m donderdag, en het restaurant is zondag t/m donderdag open van 11:30 tot 0:00. Je kunt dus zowel lunchen als avondeten.
 
-3. Goed bereikbaar vanaf het hotel? Ja, heel goed.
+3. Goed bereikbaar vanaf het Hostel? Ja, heel goed.
 
-Het hotel zit op Oranienburger Str. 65 (volgens Google Maps is dat Generator Berlin Mitte) en AMRIT op Oranienburger Str. 45, 10117 Berlin, dus in dezelfde straat.
+Het Hostel zit op Oranienburger Str. 65 (volgens Google Maps is dat Generator Berlin Mitte) en AMRIT op Oranienburger Str. 45, 10117 Berlin, dus in dezelfde straat.
 De afstand is ongeveer 130 meter hemelsbreed, zo'n 2 minuten lopen. Dat heb ik berekend uit de coördinaten van beide adressen, dus de looproute kan een paar meter langer zijn.
 Je hebt geen OV nodig en dus ook geen reiskosten.
 

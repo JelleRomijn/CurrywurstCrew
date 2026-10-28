@@ -1,10 +1,10 @@
-/* Gegevens voor de kaart: het hotel, de restaurants en de looproute vanaf het hotel.
+/* Gegevens voor de kaart: het Hostel, de restaurants en de looproute vanaf het Hostel.
    Coördinaten komen uit OpenStreetMap (Nominatim), de routes uit de FOSSGIS-looprouteplanner,
    opgehaald op 14 oktober 2026. De route naar Shiso loopt via Friedrichstraße en de
    Weidendammer Brücke, zoals in de routebeschrijving. */
 
 window.KAART_DATA = {
-    hotel: {
+    Hostel: {
         naam: 'Generator Berlin Mitte',
         adres: 'Oranienburger Str. 65',
         positie: [52.525134, 13.391397]

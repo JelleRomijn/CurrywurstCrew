@@ -1,4 +1,4 @@
-/* Kaart-sectie: Leaflet-kaart met het hotel, de restaurants en de looproutes.
+/* Kaart-sectie: Leaflet-kaart met het Hostel, de restaurants en de looproutes.
    Laptop is de basis, onder 900px schakelt de layout naar telefoon (zelfde breekpunt als style.css). */
 
 .kaart {
@@ -94,7 +94,7 @@
     justify-content: center;
 }
 
-.kaart__teken--hotel {
+.kaart__teken--Hostel {
     background: var(--ink);
     color: var(--cream);
 }
@@ -193,7 +193,7 @@
     transition: opacity 0.2s;
 }
 
-.kaart-pin--hotel {
+.kaart-pin--Hostel {
     background: var(--ink);
     color: var(--cream);
     border-color: var(--white);
